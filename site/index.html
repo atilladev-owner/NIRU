@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NIRU</title>
+<meta name="description" content="NIRU is a delta neutral Binance funding carry bot, backtested on 476 coins from 2020 to 2026 and audited trade by trade.">
+<meta name="theme-color" content="#060807">
+<meta property="og:title" content="NIRU">
+<meta property="og:description" content="A funding carry bot, backtested on 476 Binance coins and audited trade by trade.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="site.css">
+<script src="app.js" defer></script>
+</head>
+<body class="loading">
+<a class="skip" href="#main">Skip to content</a>
+
+<aside class="rail" aria-label="Chapters">
+  <a class="brand" href="#pulse"><b>NIR<i>U</i></b><span>Funding carry, audited.</span></a>
+  <nav>
+    <div class="chapters" id="chapters"><ul>
+      <li><a href="#pulse" data-ch="pulse">The pulse <small>476 coins</small></a></li>
+      <li><a href="#ritual" data-ch="ritual">The ritual <small>3 steps</small></a></li>
+      <li><a href="#autopsy" data-ch="autopsy">The autopsy <small>10 flaws</small></a></li>
+      <li><a href="#ledger" data-ch="ledger">The ledger <small>383 trades</small></a></li>
+      <li><a href="#verdict" data-ch="verdict">The verdict</a></li>
+    </ul><span class="marker" id="marker" aria-hidden="true"></span></div>
+  </nav>
+  <div class="rail-foot">
+    <a class="btn btn-ghost" href="https://github.com/atilladev-owner/NIRU" target="_blank" rel="noopener" data-source><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 256 256" fill="currentColor"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></svg>Source</a>
+    <span>Backtest only. Not financial advice.</span>
+  </div>
+</aside>
+
+<header class="topbar">
+  <a class="brand" href="#pulse"><b>NIR<i>U</i></b></a>
+  <button class="btn btn-ghost" id="open-sheet" type="button" aria-haspopup="dialog">Chapters</button>
+</header>
+<dialog class="sheet" id="sheet" aria-label="Chapters">
+  <button class="btn btn-ghost" id="close-sheet" type="button">Close</button>
+  <ul>
+    <li><a href="#pulse">The pulse</a></li>
+    <li><a href="#ritual">The ritual</a></li>
+    <li><a href="#autopsy">The autopsy</a></li>
+    <li><a href="#ledger">The ledger</a></li>
+    <li><a href="#verdict">The verdict</a></li>
+  </ul>
+</dialog>
+
+<main id="main">
+  <section class="chapter" id="pulse" aria-labelledby="h-pulse">
+    <div class="pulse-head">
+      <div>
+        <h1 id="h-pulse">Every eight hours, the longs pay rent.</h1>
+        <p class="lede">NIRU holds spot, shorts the perpetual and collects funding. Backtested on 476 Binance coins, then audited trade by trade.</p>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#ledger">See the results</a>
+        <a class="btn btn-ghost" href="https://github.com/atilladev-owner/NIRU" target="_blank" rel="noopener" data-source><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 256 256" fill="currentColor"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></svg>Source</a>
+      </div>
+    </div>
+    <figure class="pulse-chart" id="pulse-chart" data-needs-data>
+      <svg id="pulse-svg" role="img" aria-label="Weekly Binance funding from January 2020 to August 2026: the median coin paid about 44% a year in 2021, 2% in 2022 and 5% in 2025, and NIRU held more positions when funding was rich"></svg>
+      <div class="tip" id="pulse-tip" role="status" aria-live="polite"></div>
+      <figcaption class="legend">
+        <span><i class="line"></i>Median coin</span>
+        <span><i class="band"></i>Top 10% of coins</span>
+        <span><i class="held"></i>Positions NIRU held</span>
+      </figcaption>
+    </figure>
+    <div class="figures" id="figures" data-needs-data></div>
+  </section>
+
+  <section class="chapter" id="ritual" aria-labelledby="h-ritual">
+    <h2 id="h-ritual">Hedged both ways, paid on schedule.</h2>
+    <p class="sub">Price can do anything. The two legs cancel, so what is left is the funding that longs pay shorts three times a day.</p>
+    <div class="ritual">
+      <div class="steps" role="group" aria-label="How a position works">
+        <button class="step" type="button" data-focus="spot" aria-pressed="false"><h3>Buy the coin on spot</h3><p>Fully paid, no leverage. It gains when price rises.</p></button>
+        <button class="step" type="button" data-focus="perp" aria-pressed="false"><h3>Short the same amount on the perp</h3><p>At 1x. It loses exactly what spot gains, and gains what spot loses.</p></button>
+        <button class="step" type="button" data-focus="net" aria-pressed="true"><h3>Collect funding every 8 hours</h3><p>While funding is positive, longs pay the short side. The net value only steps up.</p></button>
+      </div>
+      <div class="diagram" id="diagram" data-focus="net">
+        <svg id="ritual-svg" viewBox="0 0 600 330" role="img" aria-label="Illustration: spot and perp values mirror each other while the net value rises by one funding payment every eight hours"></svg>
+        <div class="foot"><span>Illustration of one day, not market data</span><span>Collected today <b id="collected">+0.030%</b></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter" id="autopsy" aria-labelledby="h-autopsy">
+    <h2 id="h-autopsy">Ten ways the first model lied.</h2>
+    <p class="sub">The first backtest looked healthy. A second script rebuilt every trade from raw Binance files and found ten flaws, each fixed behind a failing test.</p>
+    <div class="stages" role="group" aria-label="Version of the results" id="stages"></div>
+    <div class="readout" id="readout" data-needs-data></div>
+    <p class="readout-note" id="readout-note"></p>
+    <div class="wounds">
+      <ul class="wound-list" role="listbox" aria-label="Flaws found" id="wound-list" data-needs-data></ul>
+      <div class="wound-detail" aria-live="polite"><div class="inner" id="wound-detail"></div></div>
+    </div>
+    <div class="proof">
+      <div><b>383 of 383</b><span>positions rebuilt from raw data by a separate script, zero mismatches</span></div>
+      <div><b>To the cent</b><span>final equity equals deposits plus every position's profit</span></div>
+      <div><b>No look ahead</b><span>a run cut off in June 2023 repeats every earlier decision exactly</span></div>
+    </div>
+  </section>
+
+  <section class="chapter" id="ledger" aria-labelledby="h-ledger">
+    <h2 id="h-ledger">Every position, reconciled to the cent.</h2>
+    <p class="sub">$100 to start and $80 a month into one pool, January 2020 to August 2026. Taker fees on both legs and 0.05% slippage per fill.</p>
+    <div class="tabs" role="tablist" aria-label="Results views" id="tabs">
+      <button role="tab" id="t-curve" aria-controls="p-curve" aria-selected="true">Profit curve</button>
+      <button role="tab" id="t-years" aria-controls="p-years" aria-selected="false" tabindex="-1">By year</button>
+      <button role="tab" id="t-coins" aria-controls="p-coins" aria-selected="false" tabindex="-1">By coin</button>
+      <button role="tab" id="t-variants" aria-controls="p-variants" aria-selected="false" tabindex="-1">Variants</button>
+      <span class="bar" id="tab-bar" aria-hidden="true"></span>
+    </div>
+    <div class="panel" role="tabpanel" id="p-curve" aria-labelledby="t-curve"><div class="curve" id="curve" data-needs-data></div></div>
+    <div class="panel" role="tabpanel" id="p-years" aria-labelledby="t-years" hidden>
+      <div class="years"><div class="ybars" id="ybars" aria-label="Return by year"></div><div class="scroll"><table id="ytable"></table></div></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-coins" aria-labelledby="t-coins" hidden>
+      <label class="field" for="coin-q">Find a coin<input id="coin-q" type="search" placeholder="SOL" autocomplete="off"></label>
+      <div class="scroll tall"><table id="ctable"></table></div>
+    </div>
+    <div class="panel" role="tabpanel" id="p-variants" aria-labelledby="t-variants" hidden><div class="variants" id="variants" data-needs-data></div></div>
+  </section>
+
+  <section class="chapter" id="verdict" aria-labelledby="h-verdict">
+    <h2 id="h-verdict">Real edge. Not worth waking yet.</h2>
+    <p class="verdict-statement">NIRU earns what funding pays: <em>about 7% a year</em>, rich in bull markets and close to nothing when leverage leaves.</p>
+    <div class="verdict-cols">
+      <div>
+        <h3>Why it stays buried</h3>
+        <ul>
+          <li>$10,000 at the start of 2020 became $16,132 by August 2026, 7.4% a year compounded.</li>
+          <li>More capital does not raise the rate. In lean years most of the money sits idle for lack of coins worth holding.</li>
+          <li>2022 returned +0.2% and 2025 returned -1.3%, with the pool mostly in cash.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What would wake it</h3>
+        <ul>
+          <li>Funding back at 2021 levels, when the same rules returned 24%.</li>
+          <li>More venues than Binance, so the idle money finds work.</li>
+          <li>Yield on the cash waiting between positions.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="closing">
+      <span>NIRU is a research project by Atilla Dev. Data from the Binance public archive. Backtest only, not financial advice.</span>
+      <a class="btn btn-primary" href="https://github.com/atilladev-owner/NIRU" target="_blank" rel="noopener" data-source><svg class="icon" aria-hidden="true" focusable="false" viewBox="0 0 256 256" fill="currentColor"><path d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"/></svg>Source</a>
+    </div>
+  </section>
+</main>
+</body>
+</html>
