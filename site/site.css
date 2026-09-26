@@ -228,7 +228,7 @@ dialog.sheet { margin: 0 0 0 auto; height: 100%; max-height: 100%; width: min(32
 dialog.sheet[open] { @starting-style { transform: translateX(100%); } }
 dialog.sheet::backdrop { background: rgb(0 0 0 / 0.55); }
 dialog.sheet ul { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 4px; }
-dialog.sheet a { display: block; padding: 12px 0; text-decoration: none; font: 500 18px var(--sans); }
+dialog.sheet ul a { display: block; padding: 12px 0; text-decoration: none; font: 500 18px var(--sans); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0ms !important; animation: none !important; }
@@ -238,3 +238,50 @@ dialog.sheet a { display: block; padding: 12px 0; text-decoration: none; font: 5
 body.loading #pulse-chart svg { min-height: 340px; }
 body.loading #pulse-chart { background: linear-gradient(90deg, var(--crypt), var(--slab), var(--crypt)); background-size: 200% 100%; animation: shimmer 1.4s linear infinite; }
 @keyframes shimmer { to { background-position: -200% 0; } }
+
+/* Maker's mark: Product of Atilla Dev. The same stamp every Atilla Dev product carries,
+   placed the same way. NIRU is dark only, so the gold crest is used throughout. On a
+   phone the Chapters sheet carries the mark instead, so nothing floats over the charts. */
+.atilla-mark {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 14px 8px 8px;
+  background: var(--crypt);
+  color: var(--bone);
+  border: 1px solid var(--lichen);
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgb(0 0 0 / 0.45);
+  transition: border-color 180ms ease-out;
+}
+.atilla-mark:hover, .atilla-mark:focus-visible { border-color: var(--necrotic); color: var(--bone); }
+.atilla-mark img { width: 26px; height: 26px; display: block; }
+.atilla-mark.in-sheet { display: none; position: static; box-shadow: none; margin-top: 28px; max-width: 100%; white-space: normal; line-height: 1.4; }
+.atilla-watermark {
+  position: fixed;
+  right: -70px;
+  bottom: 56px;
+  width: 380px;
+  height: 380px;
+  z-index: 89;
+  opacity: 0.05;
+  pointer-events: none;
+  background: url("atilla-crest-gold.webp") center / contain no-repeat;
+}
+@media (max-width: 960px) {
+  .atilla-watermark, .atilla-mark:not(.in-sheet) { display: none; }
+  .atilla-mark.in-sheet { display: inline-flex; }
+}
