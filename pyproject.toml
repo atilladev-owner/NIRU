@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "niru"
+version = "1.0.0"
+description = "Audited backtester for a delta neutral Binance funding carry bot."
+requires-python = ">=3.12"
+license = "PolyForm-Noncommercial-1.0.0"
+license-files = ["LICENSE.md"]
+dependencies = ["numpy>=2.0", "pandas>=2.2", "pyarrow>=15", "requests>=2.31"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools]
+packages = ["niru"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
